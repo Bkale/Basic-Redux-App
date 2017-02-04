@@ -3,6 +3,7 @@ import '../Css/App.css';
 import TodoInput from '../Component/TodoInput.js'
 import TodoList from '../Component/TodoList.js'
 import actions from '../Redux/actions'
+import UserInfo from '../Component/UserInfo'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Todo List</h1>
+        <UserInfo user={this.props.user} createNewUserId={this.props.actions.createNewUserId}/>
         <TodoInput addTodo={this.props.actions.addTodo} />
         <TodoList actions={this.props.actions} todos={this.props.todos}/>
       </div>
